@@ -4,11 +4,10 @@ import useInview from './useInView';
 function useImageLazyLoading() {
   const { ref, inView } = useInview();
   useEffect(() => {
-    const img = ref.current;
+    const img: any = ref.current;
 
     if (inView) {
       img.setAttribute('src', img.alt);
-
       img.classList.add('opacity-1');
     }
   }, [inView, ref]);

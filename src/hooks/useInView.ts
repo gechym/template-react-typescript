@@ -15,7 +15,9 @@ function useInview() {
     }
 
     return () => {
-      observer.unobserve(el);
+      if (el) {
+        observer.unobserve(el);
+      }
     };
   }, []);
 
